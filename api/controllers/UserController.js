@@ -21,22 +21,22 @@ module.exports = {
 
 function create(req, res) {
   UserService.register(req.body)
-    .then((profile) => {
+    .then(profile => {
       return res.json(profile);
     })
-    .catch((err) => {
-      err.message = err.message || 'Unable to register';
-      return res.badRequest(err);
+    .catch(error => {
+      error.message = error.message || 'Unable to register';
+      return res.badRequest(error);
     });
 }
 
 function login(req, res) {
   UserService.authenticate(req.body)
-    .then((profile) => {
+    .then(profile => {
       return res.json(profile);
     })
-    .catch((err) => {
-      err.message = err.message || 'Could not login, have you registered?';
-      return res.badRequest(err);
+    .catch(error => {
+      error.message = error.message || 'Could not login, have you registered?';
+      return res.badRequest(error);
     });
 }
