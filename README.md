@@ -1,9 +1,11 @@
 # baseline-sails.api
 
 ## Intention
-This repo is intended to be used as a starting point for node projects. It has JWT authentication baked in and is ready to be expanded upon.
+This repo is intended to be used as a starting point for node projects using Sails.
 
-There is no heavy boilerplate code to remove.  This is my starting point for node projects using sails.
+It has JWT authentication baked in and is ready to be expanded upon.
+
+There is no heavy boilerplate code to remove.
 
 ## Prerequisites
 
@@ -23,4 +25,12 @@ $ mkdir -p /data/db
 ## Usage
 
 ### Start a local Mongo instance (using your data directory from above)
-`mongod --dbpath /data/db`
+> `mongod --dbpath /data/db`
+
+### Clone this repo
+> `git clone https://github.com/johnrhampton/baseline-sails.api.git`
+
+### Start sails
+> `nvm use 4.4.4`
+
+> `npm start`

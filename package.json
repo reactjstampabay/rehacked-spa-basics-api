@@ -1,7 +1,7 @@
 {
   "name": "baseline-sails.api",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
@@ -33,8 +33,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jrh/baseline-sails.api.git"
+    "url": "https://github.com/johnrhampton/baseline-sails.api.git"
   },
-  "author": "jrh",
+  "author": "JRH",
   "license": ""
 }
