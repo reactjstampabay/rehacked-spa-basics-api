@@ -34,3 +34,19 @@ $ mkdir -p /data/db
 > `nvm use 4.4.4`
 
 > `npm start`
+
+## Create a user using Postman
+> POST - http://localhost:1337/user
+>
+> {
+>      "email": "yo@mtv.raps",
+>      "password": "bad-password"
+>  }
+
+## Authenticate using Postman
+> POST - http://localhost:1337/user/login
+>
+> {
+>      "email": "yo@mtv.raps",
+>      "password": "bad-password"
+>  }
