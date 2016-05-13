@@ -16,7 +16,7 @@ function authenticate(payload) {
   return new Promise(
     (resolve, reject) => {
       return User.findOne({email: payload.email})
-        .then(ORM.expectModel)
+        .then(ORMService.expectModel)
         .then(user => {
           return confirmPassword(payload.password, user);
         })
@@ -39,7 +39,7 @@ function register(payload) {
   return new Promise(
     (resolve, reject) => {
       return User.findOne({email: payload.email})
-        .then(ORM.expectNoModel)
+        .then(ORMService.expectNoModel)
         .then(() => {
           return User.create(payload);
         })
@@ -55,7 +55,7 @@ function register(payload) {
 function encrypt(user) {
   return new Promise(
     (resolve, reject) => {
-      bcrypt.genSalt(sails.config.system.SALT_ROUNDS, (err, salt) => {
+      bcrypt.genSalt(sails.config.jwt.SALT_ROUNDS, (err, salt) => {
         bcrypt.hash(user.password, salt, (err, hashedPassword) => {
           if (err) {
             sails.log.error('Unable to hash password: ' + user.password);
@@ -85,7 +85,7 @@ function confirmPassword(password, user) {
 function signToken(user) {
   return new Promise(
     (resolve) => {
-      user.access_token = jwt.sign(user.toJWT(), sails.config.system.JWT_SECRET, {expiresIn: sails.config.system.TOKEN_EXPIRES});
+      user.access_token = jwt.sign(user.toJWT(), sails.config.jwt.JWT_SECRET, {expiresIn: sails.config.jwt.TOKEN_EXPIRES});
       return resolve(user.toJSON());
     }
   );
