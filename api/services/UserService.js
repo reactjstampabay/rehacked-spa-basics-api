@@ -86,6 +86,7 @@ function signToken(user) {
   return new Promise(
     (resolve) => {
       user.access_token = jwt.sign(user.toJWT(), sails.config.jwt.JWT_SECRET, {expiresIn: sails.config.jwt.TOKEN_EXPIRES});
+      user.status = 'authenticated';
       return resolve(user.toJSON());
     }
   );
