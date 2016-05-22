@@ -7,6 +7,11 @@ It has JWT authentication baked in and is ready to be expanded upon.
 
 There is no heavy boilerplate code to remove.
 
+## Demo
+> The API is deployed to Heroku via Codeship
+
+> https://baseline-sails-api.herokuapp.com/
+
 ## Prerequisites
 
 ### NVM
