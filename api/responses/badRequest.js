@@ -31,11 +31,13 @@ module.exports = function badRequest(data, options) {
   }
   else sails.log.verbose('Sending 400 ("Bad Request") response');
 
-  // Only include errors in response if application environment
-  // is not set to 'production'.  In production, we shouldn't
-  // send back any identifying information about errors.
+  // Only include errors in response if application environment is not set to 'production'.
+  // In production, we shouldn't send back any identifying information about errors.
+  /**
+   * we remove stack in production, but allow message
+   */
   if (sails.config.environment === 'production' && sails.config.keepResponseErrors !== true) {
-    data = undefined;
+    delete data.stack;
   }
 
   // If the user-agent wants JSON, always respond with JSON
