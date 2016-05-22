@@ -16,7 +16,7 @@ function authenticate(payload) {
   return new Promise(
     (resolve, reject) => {
       return User.findOne({email: payload.email})
-        .then(ORMService.expectModel)
+        .then(UtilService.expectModel)
         .then(user => {
           return confirmPassword(payload.password, user);
         })
@@ -39,7 +39,7 @@ function register(payload) {
   return new Promise(
     (resolve, reject) => {
       return User.findOne({email: payload.email})
-        .then(ORMService.expectNoModel)
+        .then(UtilService.expectNoModel)
         .then(() => {
           return User.create(payload);
         })
