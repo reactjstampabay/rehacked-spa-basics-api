@@ -25,7 +25,7 @@ function create(req, res) {
       return res.json(profile);
     })
     .catch(error => {
-      error.message = error.message || 'Unable to register';
+      error.message = error.message || 'Unable to register, have you already registered?';
       return res.badRequest(error);
     });
 }
