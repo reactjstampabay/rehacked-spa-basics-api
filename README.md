@@ -15,8 +15,9 @@ There is no heavy boilerplate code to remove.
 ## Prerequisites
 
 ### NVM
-1. [Node Version Manager](https://github.com/creationix/nvm)
-2. Node 4.4.4 (using `nvm install 4.4.4`)
+> [Node Version Manager](https://github.com/creationix/nvm)
+
+> Node 4.4.5 (using `nvm install 4.4.5`)
 
 ### Update [Homebrews](http://brew.sh/) package database
 $ brew update
@@ -36,7 +37,9 @@ $ mkdir -p /data/db
 > `git clone https://github.com/johnrhampton/baseline-sails.api.git`
 
 ### Start sails
-> `nvm use 4.4.4`
+> `nvm use 4.4.5`
+
+> `npm install`
 
 > `npm start`
 
