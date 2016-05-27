@@ -20,13 +20,13 @@ There is no heavy boilerplate code to remove.
 > Node 4.4.5 (using `nvm install 4.4.5`)
 
 ### Update [Homebrews](http://brew.sh/) package database
-$ brew update
+> `brew update`
 
 ### Install the MongoDB Binaries
-$ brew install mongodb
+> `brew install mongodb`
 
 ### Create the data directory in your preferred location
-$ mkdir -p /data/db
+> `mkdir -p /data/db`
 
 ## Usage
 
