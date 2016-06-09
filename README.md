@@ -1,4 +1,4 @@
-# baseline-sails.api
+# rehacked-spa-basics-api
 
 ## Intention
 This repo is intended to be used as a starting point for node projects using Sails.
